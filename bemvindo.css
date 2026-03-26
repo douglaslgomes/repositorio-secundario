@@ -1,0 +1,294 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+/* Loading Screen Styles */
+.loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #161717 0%, #1a1a1a 50%, #2d2d2d 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    opacity: 1;
+    transition: opacity 0.5s ease;
+}
+
+.loading-screen.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.loading-content {
+    text-align: center;
+    color: #000;
+    max-width: 400px;
+    padding: 40px;
+}
+
+.loading-spinner {
+    margin-bottom: 30px;
+}
+
+.spinner {
+    width: 80px;
+    height: 80px;
+    background-image: url('../assets/pokebola.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: 0 auto;
+    animation: moveSide 1s ease-in-out infinite alternate;
+}
+
+@keyframes moveSide {
+    0% {
+        transform: translateX(-10px);
+    }
+
+    100% {
+        transform: translateX(10px);
+    }
+}
+
+.loading-content h2 {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    background: linear-gradient(135deg, #ff6b6b, #4ecdc4);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.loading-content p {
+    font-size: 16px;
+    color: #cccccc;
+    margin-bottom: 30px;
+    font-weight: 300;
+}
+
+.loading-progress {
+    width: 100%;
+    height: 6px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.progress-bar {
+    height: 100%;
+    background: linear-gradient(90deg, #ff6b6b, #4ecdc4);
+    width: 0%;
+    border-radius: 3px;
+    transition: width 0.3s ease;
+}
+
+body {
+    background: #161617 url('../assets/brilho.png') center center no-repeat;
+    background-size: contain;
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+/* Container mais próximo dos cards */
+.home-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 20px;
+    text-align: center;
+}
+
+/* Título mais perto dos cards */
+.welcome {
+    font-size: 32px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 35px;
+    max-width: 1020px;
+    margin: 40px auto 0;
+}
+
+/* CARD base */
+.card {
+    position: relative;
+    width: 492.61px;
+    height: 184.45px;
+    border-radius: 22px;
+    display: flex;
+    align-items: flex-end;
+    padding-left: 25px;
+    padding-bottom: 20px;
+    font-size: 26px;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+    color: #fff;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.35);
+    text-decoration: none;
+    transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.5);
+}
+
+/* IMAGEM do Pokémon */
+.poke-img {
+    position: absolute;
+    width: 200px;
+    right: -10px;
+    bottom: -8px;
+    pointer-events: none;
+}
+
+.card1 {
+    background: url('/assets/ret1.png') center/cover no-repeat;
+}
+
+.card2 {
+    background: url('/assets/ret2.png') center/cover no-repeat;
+}
+
+.card2 .poke-img {
+    width: 220px;
+    left: -10px;
+    right: auto;
+}
+
+.card2 span {
+    padding-left: 0;
+    padding-right: 25px;
+    text-align: right;
+    flex: 1;
+}
+
+.card3 {
+    background: url('/assets/ret3.png') center/cover no-repeat;
+}
+
+.card4 {
+    background: url('/assets/ret4.png') center/cover no-repeat;
+}
+
+.card4 .poke-img {
+    width: 220px;
+    left: -10px;
+    right: auto;
+}
+
+.card4 span {
+    padding-left: 0;
+    padding-right: 25px;
+    text-align: right;
+    flex: 1;
+}
+
+/* Estilos para as imagens do menu */
+.menu-image {
+    display: block;
+    text-decoration: none;
+    border-radius: 22px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.menu-image:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+}
+
+.menu-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.Nav-Inferior {
+    position: fixed;
+    bottom: 20px;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    padding: 0 20px;
+    z-index: 100;
+}
+
+.Nav-Container {
+    display: flex;
+    gap: 30px;
+    background: rgba(30, 30, 30, 0.85);
+    backdrop-filter: blur(12px);
+    padding: 12px 30px;
+    border-radius: 50px;
+    align-items: center;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+}
+
+.Nav-Item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 11px;
+    color: #aaa;
+    text-decoration: none;
+    gap: 6px;
+    transition: all 0.3s ease;
+    min-width: 50px;
+}
+
+.Nav-Item:hover {
+    color: #ff6b6b;
+    transform: translateY(-3px);
+}
+
+.Nav-Item i {
+    font-size: 22px;
+}
+
+.Nav-Item.Home {
+    position: relative;
+}
+
+.Nav-Item.Home img {
+    width: 50px;
+    height: 50px;
+    transition: transform 0.3s ease;
+    filter: drop-shadow(0 4px 8px rgba(239, 83, 80, 0.5));
+}
+
+.Nav-Item.Home:hover img {
+    transform: scale(1.15) rotate(15deg);
+}
+
+/* Responsivo */
+@media (max-width: 700px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    .card {
+        height: 184.45px;
+    }
+
+    .poke-img {
+        width: 100px;
+    }
+}
